@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
- * Copyright (C) 2012, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -110,4 +110,10 @@
 
     <!-- prompt message for stopping record -->
     <string name="save_record_file">"录音已保存至 "<xliff:g id="record_file">%1$s</xliff:g>"</string>
+    <!-- all recordings will show up in the media database with this 'artist' name -->
+    <string name="audio_db_artist_name">我的 FM 录音</string>
+    <!-- all recordings will show up in the media database with this 'album' name -->
+    <string name="audio_db_album_name">FM 录音</string>
+    <!-- all recordings will show up in the media database in a playlist with this name -->
+    <string name="audio_db_playlist_name">FM 录音</string>
 </resources>
