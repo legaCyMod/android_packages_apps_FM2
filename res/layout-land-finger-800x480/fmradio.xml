@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- * Copyright (c) 2009, 2012, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2009, 2012-2013, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -113,6 +113,7 @@
     <HorizontalScrollView
         android:layout_width="fill_parent"
         android:layout_height="50dp"
+        android:fillViewport="true"
         android:layout_alignParentBottom="true"
         android:scrollbars="none">
 
@@ -127,6 +128,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="12sp"
                 android:singleLine="true"
+                android:layout_weight="1"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"/>
 
@@ -136,6 +138,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="12sp"
                 android:singleLine="true"
+                android:layout_weight="1"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"/>
 
@@ -145,6 +148,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="12sp"
                 android:singleLine="true"
+                android:layout_weight="1"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"/>
 
@@ -154,6 +158,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="12sp"
                 android:singleLine="true"
+                android:layout_weight="1"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"/>
 
@@ -163,6 +168,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="12sp"
                 android:singleLine="true"
+                android:layout_weight="1"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"/>
 
@@ -172,15 +178,17 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="12sp"
                 android:singleLine="true"
+                android:layout_weight="1"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"/>
 
             <Button android:id="@+id/presets_button_7"
-                style="@style/ButtonStripRight"
+                style="@style/ButtonStripMiddle"
                 android:text="@string/add_station"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="12sp"
                 android:singleLine="true"
+                android:layout_weight="1"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"/>
 
