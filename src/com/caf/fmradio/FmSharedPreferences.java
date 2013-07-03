@@ -446,8 +446,46 @@ public class FmSharedPreferences
       mRecordDuration = sp.getInt(LAST_RECORD_DURATION, RECORD_DUR_INDEX_0_VAL);
       mAFAutoSwitch = sp.getBoolean(LAST_AF_JUMP_VALUE, true);
       mAudioOutputMode = sp.getBoolean(AUDIO_OUTPUT_MODE, true);
+     /* Reset the Lists before reading the preferences */
+      mListOfPlists.clear();
 
       int num_lists = sp.getInt(LIST_NUM, 1);
+      if (mListOfPlists.size() == 0) {
+
+         for (int listIter = 0; listIter < num_lists; listIter++) {
+             String listName = sp.getString(LIST_NAME + listIter, "FM - " + (listIter+1));
+             int numStations = sp.getInt(STATION_NUM + listIter, 1);
+             if (listIter == 0) {
+                 createFirstPresetList(listName);
+             } else {
+                 createPresetList(listName);
+             }
+
+             PresetList curList = mListOfPlists.get(listIter);
+             for (int stationIter = 0; stationIter < numStations; stationIter++) {
+                  String stationName = sp.getString(STATION_NAME + listIter + "x" + stationIter,
+                                                      DEFAULT_NO_NAME);
+                  int stationFreq = sp.getInt(STATION_FREQUENCY + listIter + "x" + stationIter,
+                                                   DEFAULT_NO_FREQUENCY);
+                  PresetStation station = curList.addStation(stationName, stationFreq);
+
+                  int stationId = sp.getInt(STATION_ID + listIter + "x" + stationIter,
+                                              DEFAULT_NO_STATIONID);
+                  station.setPI(stationId);
+
+                  int pty = sp.getInt(STATION_PTY + listIter + "x" + stationIter, DEFAULT_NO_PTY);
+                  station.setPty(pty);
+
+                  int rdsSupported = sp.getInt(STATION_RDS + listIter + "x" + stationIter,
+                                                 DEFAULT_NO_RDSSUP);
+                  if (rdsSupported != 0) {
+                      station.setRDSSupported(true);
+                  } else {
+                      station.setRDSSupported(false);
+                  }
+             }
+         }
+      }
       /* Load Configuration */
       setCountry(sp.getInt(FMCONFIG_COUNTRY, 0));
       /* Last list the user was navigating */
