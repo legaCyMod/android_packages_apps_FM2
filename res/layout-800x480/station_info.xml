@@ -48,7 +48,7 @@
                 android:layout_alignParentLeft="true"
                 android:visibility="gone" />
 
-            <TextView android:id="@+id/record_msg_tv"
+            <!--<TextView android:id="@+id/record_msg_tv"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                 android:textStyle="bold"
                 android:clickable="true"
                 android:visibility="invisible"
-                android:text="@string/default_record"/>
+                android:text="@string/default_record"/>-->
 
 
             <TextView android:id="@+id/stereo_text_tv"
