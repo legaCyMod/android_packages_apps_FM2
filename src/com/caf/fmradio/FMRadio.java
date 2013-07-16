@@ -1872,9 +1872,6 @@ public class FMRadio extends Activity
             mTuneStationFrequencyTV.setOnLongClickListener(mFrequencyViewClickListener);
          }
          invalidateOptionsMenu();
-         if ((mSleepMsgTV != null) && !isSleepTimerActive()) {
-             mSleepMsgTV.setText("");
-         }
          if ((mRecordingMsgTV != null) && !isRecording()) {
              mRecordingMsgTV.setText("");
          }
@@ -1911,7 +1908,7 @@ public class FMRadio extends Activity
                                     : View.INVISIBLE));
       }
       if (mSleepMsgTV != null) {
-         mSleepMsgTV.setVisibility(((bEnable == true) ? View.VISIBLE
+         mSleepMsgTV.setVisibility(((bEnable && isSleepTimerActive()) ? View.VISIBLE
                                  : View.INVISIBLE));
       }
       if (mRecordingMsgTV != null) {
@@ -2319,8 +2316,7 @@ public class FMRadio extends Activity
          mSleepUpdateHandlerThread.interrupt();
       }
       if(null != mSleepMsgTV) {
-         //mSleepMsgTV.setVisibility(View.INVISIBLE);
-           mSleepMsgTV.setText("");
+         mSleepMsgTV.setVisibility(View.INVISIBLE);
       }
    }
 
@@ -2363,9 +2359,7 @@ public class FMRadio extends Activity
             mSleepAtPhoneTime = 0;
          }
       }
-      if (vis == View.INVISIBLE)
-          mSleepMsgTV.setText("");
-      //mSleepMsgTV.setVisibility(vis);
+      mSleepMsgTV.setVisibility(vis);
    }
 
    private Handler mUIUpdateHandlerHandler = new Handler() {
